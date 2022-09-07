@@ -6,4 +6,4 @@ RUN git clone https://github.com/xSenpuu/Ultron-BotV1.git .
 RUN npm install
 
 
-CMD ["npm", "run", "test"]
+CMD ["node", "src/bot.js"]
