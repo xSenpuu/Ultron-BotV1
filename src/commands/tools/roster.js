@@ -2,18 +2,31 @@ const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require("disc
 
 var fs = require('fs');
 var Promise = require('polyfill-promise');
-var Sheets = require('google-sheets-api').Sheets;
-var documentId = '1T9DalQHGUat5iU2Mth3T1649EXBVjoHgWAay_6qYY90';
-var serviceEmail = 'ultron-bot@live-roster.iam.gserviceaccount.com';
-var serviceKey = fs.readFileSync("./src/commands/tools/sheets.pem").toString();
-var sheets = new Sheets({ email: serviceEmail, key: serviceKey });
+//var Sheets = require('google-sheets-api').Sheets;
+//var documentId = '1T9DalQHGUat5iU2Mth3T1649EXBVjoHgWAay_6qYY90';
+const path = require('path');
+const process = require('process');
+const {google} = require('googleapis');
+//authentication
+const key = require(path.join(process.cwd(), 'credentials.json'));
+const jwtClient = new google.auth.JWT(
+  key.client_email,
+  null,
+  key.private_key,
+  ["https://www.googleapis.com/auth/spreadsheets"],
+  null
+);
+const sheets = google.sheets({ version: "v4", auth: jwtClient });
+// var serviceEmail = 'ultron-bot@live-roster.iam.gserviceaccount.com';
+// var serviceKey = fs.readFileSync("./src/commands/tools/sheets.pem").toString();
+// var sheets = new Sheets({ email: serviceEmail, key: serviceKey });
 
 function embedString(string, data){
     for(var i = 0; i<data.length;i++){
-    if(data[i].content == ""){
+    if(data[i] == ""){
         string = string+"ㅤ\n";
         }else{
-            string = string+data[i].content+"\n";
+            string = string+data[i]+"\n";
         }
     }
     return string;
@@ -24,19 +37,21 @@ module.exports = {
     .setName("roster")
     .setDescription("Display Roster From Google")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
-  async execute(interaction) {
-    sheets.getSheets(documentId)
-.then(function(sheetsInfo) {
-  // NOTE: Using third sheet in this!
-  var sheetInfo = sheetsInfo[2];
-  return Promise.all([
-    sheets.getSheet(documentId, sheetInfo.id),
-    sheets.getRange(documentId, sheetInfo.id, ""),
-  ]);
-})
+async execute(interaction) {
+  // Get sheet names
+  const res = await sheets.spreadsheets.get({
+    spreadsheetId: '1T9DalQHGUat5iU2Mth3T1649EXBVjoHgWAay_6qYY90'
+  });
+  // Combine sheet names into an array
+  let sheetsNames = []
+  res.data.sheets.map((x) => {sheetsNames.push(x.properties.title)})
+  // Get roster from sheet
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: '1T9DalQHGUat5iU2Mth3T1649EXBVjoHgWAay_6qYY90',
+    range: `${sheetsNames[2]}!A1:T28`,
+  });
+  sheetData = response.data.values
 // NOTE: Pulls info from specific cells.
-.then(function(sheets) {
-    sheetData = sheets[1];
     var cmdr = [sheetData[5][2]];
     var arty = [sheetData[7][3],sheetData[8][3],sheetData[9][3],sheetData[10][3],sheetData[11][3]];
     var recon = [sheetData[14][3],sheetData[16][3]];
@@ -87,9 +102,7 @@ module.exports = {
     aux6string = embedString(aux6string, aux6);
     fxt7string = embedString(fxt7string, fxt7);
     prbstring = embedString(prbstring, prb);
-    
 
-    //console.log(prbstring);
     const rosterEmbed = new EmbedBuilder()
                 .setTitle("♿ GOF-ish Match Roster ♿")
                 .setDescription("Check if you're playing below:")
@@ -182,9 +195,5 @@ module.exports = {
                       "inline": true
                     })
                     return interaction.reply({embeds: [rosterEmbed], ephemeral: false})
-})
-.catch(function(err){
-  console.error(err, 'Failed to read Sheets document');
-});
-  },
-};
+}
+}
