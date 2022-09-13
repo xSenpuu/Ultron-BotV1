@@ -11,6 +11,10 @@ const CREATE_SIGNUP = "Signup options"
 const CREATE_SIGNUP_DESCRIPTION = "By default, users can sunup as **Accepted**, **Declined**, or **Tentative**\n\n**1** Keep the defaults\n**2** Configure signup options\n**3** Us a signup preset\n\nEnter a number to select an option"
 const CREATE_ATTENDEES = "Enter the maximum number of attendees"
 const CREATE_ATTENDEES_DESCRIPTION = "Type `None` for no limit. Up to 250 attendees are permitted"
+const CREATE_TIME_ZONE = "Enter your time zone's number"
+const CREATE_TIME_ZONE_DESCRIPTION = "1 Eastern Time"
+const CREATE_TIME_STRING = "When should the event start?"
+const CREATE_TIME_DESCRIPTION = ">Friday at 9pm\nTomorrow at 18:00\nNow\nIn 1 hour\nYYYY-MM-DD 7:00 PM"
 
 
 const CANCEL = "Cancel"
@@ -19,6 +23,8 @@ const ERROR_TIMEOUT = "__**ERROR**__: Took too long to respond";
 const ERROR_UNSUPPORTED = "__**ERROR**__: Operation not yet supported";
 const ERROR_INVALID = "__**ERROR**__: Invalid Response";
 const ERROR_LOCKOUT = "__**ERROR**__: Too many failed attempts";
+const ERROR_ATTENDEES = "__**ERROR**__: Invalid response, assuming None"
+const ERROR_EST_ONLY = "__**ERROR**__: Only eastern time is currently supported"
 
 
 
@@ -119,7 +125,7 @@ module.exports = {
 			let attempts = 0;
 			let response = 0;
 			while (needResponse && attempts < MAX_TRIES) {
-				let collected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: 40000 });
+				let collected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: WAIT_TIME });
 				let response = collected.first().content
 				console.log(response)
 
@@ -151,65 +157,52 @@ module.exports = {
 
 			await interaction.user.send({ embeds: [generateEmbed(CREATE_ATTENDEES, CREATE_ATTENDEES_DESCRIPTION)] });
 
-			needResponse = true;
-			attempts = 0;
-			response = 0;
-			while (needResponse && attempts < MAX_TRIES) {
-				let collected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: 40000 });
-				let response = collected.first().content
-				console.log(response)
+			
+			let attendeesCollected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: WAIT_TIME });
+			
+			if (attendeesCollected.size == 0) {
+				await interaction.user.send({ embeds: [generateErrorEmbed(ERROR_TIMEOUT)] });
+				return;
+			} 
 
-				if (response == "1") {
-					needResponse = false
+			let numberConversion = Number(attendeesCollected.first().content);
 
-				} else if (response === "2") {
-					handleError(interaction, ERROR_UNSUPPORTED);
-					await interaction.user.send({ embeds: [generateEmbed(CREATE_SIGNUP, CREATE_SIGNUP_DESCRIPTION)] });
-				}else if (response == "3") {
-					handleError(interaction, ERROR_UNSUPPORTED);
-					await interaction.user.send({ embeds: [generateEmbed(CREATE_SIGNUP, CREATE_SIGNUP_DESCRIPTION)] });
-				} else {
-					handleError(interaction, ERROR_INVALID);
-					await interaction.user.send({ embeds: [generateEmbed(CREATE_SIGNUP, CREATE_SIGNUP_DESCRIPTION)] });
-				}
-				attempts++
+			if (!numberConversion || numberConversion > 250 || numberConversion < 1) {
+				await interaction.user.send({ embeds: [generateErrorEmbed(ERROR_ATTENDEES)] });
+				numberConversion = NaN
+				console.log(numberConversion)
 			}
 
+			// Select Time Zone
+
+			await interaction.user.send({ embeds: [generateEmbed(CREATE_TIME_ZONE, CREATE_TIME_ZONE_DESCRIPTION)] });
 			
-			if (needResponse) {
-				handleError(interaction, ERROR_LOCKOUT);
-				return
+			let timeZoneCollected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: WAIT_TIME });
+
+			if (timeZoneCollected.size == 0) {
+				await interaction.user.send({ embeds: [generateErrorEmbed(ERROR_TIMEOUT)] });
+				return;
 			} 
-			
+
+			let timeZoneResponse = timeZoneCollected.first().content
+			// Need cancel
+			if (timeZoneResponse != "1") {
+				await interaction.user.send({ embeds: [generateErrorEmbed(ERROR_EST_ONLY)] });
+			}
+
+			// Enter Time String
+			await interaction.user.send({ embeds: [generateEmbed(CREATE_TIME_STRING, CREATE_TIME_DESCRIPTION)] });
+			let timeStringCollected = await interaction.user.dmChannel.awaitMessages({filter, max: 1, time: WAIT_TIME });
+
+			if (timeStringCollected.size == 0) {
+				await interaction.user.send({ embeds: [generateErrorEmbed(ERROR_TIMEOUT)] });
+				return;
+			} 
+
+			let timeStringResponse = timeZoneCollected.first().content
 
 
-
-
-
-			// let needResponse = true;
-			// let attempts = 0;
-
-			// while (needResponse && attempts < MAX_TRIES) {
-			// 	let collected = await interaction.user.dmChannel.awaitMessages({ max: 1, time: 40000 });
-			// 	let message = collected.first().content
-			// 	console.log(message)
-
-			// 	if (message == "1") {
-			// 		needResponse = false
-
-			// 	} else if (message === "2") {
-			// 		handleError(interaction, "**ERROR**: Operation not yet supported")
-			// 	} else {
-			// 		await interaction.user.send("Error: Invalid Response");
-			// 	}
-			// 	attempts++
-			// }
-
-			// if (needResponse) {
-			// 	await interaction.user.send("Error: You fucked up");
-			// } else {
-			// 	await interaction.user.send("Good Job");
-			// }
+	
 
 
 
