@@ -10,7 +10,7 @@ module.exports = {
             const buttonID = interaction.customId;
             if (buttonID === 'join-us') { // get button by customId set below
                 const member = interaction.member; // get member from the interaction - person who clicked the button
-                const channelID = '842906354129174528' //announcements
+                const channelID = '1019418308350595122' //prospects
                 const channel = interaction.guild.channels.cache.get(channelID)
                 //console.log(member);
                 const leftembed = new EmbedBuilder()
