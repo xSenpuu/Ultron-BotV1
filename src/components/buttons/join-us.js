@@ -23,7 +23,7 @@ module.exports = {
               })
               const prospectembed = new EmbedBuilder()
               .setTitle(`Prospect Notification`)
-              .setDescription(`<@${interaction.user.id}> just picked up the <@&997972309732237462> role!`)
+              .setDescription(`<@${interaction.user.id}> just picked up the <@${PROSPECT}> role!`)
               .setColor(0x800080)
               .setFooter({
               iconURL:
