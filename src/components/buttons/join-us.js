@@ -14,7 +14,7 @@ module.exports = {
                 //console.log(member);
                 const leftembed = new EmbedBuilder()
                 .setTitle(`Prospect Notification`)
-                .setDescription(`<@${interaction.user.id}> just removed the <@${PROSPECT}> role!`)
+                .setDescription(`<@${interaction.user.id}> just removed the <@&${PROSPECT}> role!`)
                 .setColor(0x800080)
                 .setFooter({
                 iconURL:
@@ -23,7 +23,7 @@ module.exports = {
               })
               const prospectembed = new EmbedBuilder()
               .setTitle(`Prospect Notification`)
-              .setDescription(`<@${interaction.user.id}> just picked up the <@${PROSPECT}> role!`)
+              .setDescription(`<@${interaction.user.id}> just picked up the <@&${PROSPECT}> role!`)
               .setColor(0x800080)
               .setFooter({
               iconURL:
