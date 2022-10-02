@@ -65,10 +65,10 @@ var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_sl:10259237
 var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
 var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][15],"<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15],"<:hll_infantry:1025923730582548532>" +sheetData[8][15],"<:hll_infantry:1025923730582548532>" +sheetData[9][15],"<:hll_infantry:1025923730582548532>" +sheetData[10][15]];
 var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" +sheetData[15][9],"<:hll_infantry:1025923730582548532>" +sheetData[16][9],"<:hll_infantry:1025923730582548532>" +sheetData[17][9]];
-var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" +sheetData[15][12],"<:hll_infantry:1025923730582548532>" +sheetData[16][12],"<:hll_infantry:1025923730582548532>" +sheetData[17][12]];
+var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" +sheetData[15][12],"<:hll_infantry:1025923730582548532>" +sheetData[16][12]];
 var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" +sheetData[16][15]];
 var fxt7 = ["<:hll_infantry:1025923730582548532>" +sheetData[19][15]];
-var prb = ["<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_infantry:1025923730582548532>" +sheetData[20][12]];
+var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
@@ -123,7 +123,7 @@ var prb = ["<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_infantry:1
                       "inline": true
                     },
                                     {
-                      "name": "```TANK SIMP```",
+                      "name": "```SIMPS [SMP]```",
                       "value": fxt7string,
                       "inline": true
                     },
@@ -173,7 +173,7 @@ var prb = ["<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_infantry:1
                       "inline": true
                     },
                                     {
-                      "name": "```ARTY```",
+                      "name": "```ARTILLERY```",
                       "value": artystring,
                       "inline": true
                     },
@@ -183,7 +183,7 @@ var prb = ["<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_infantry:1
                       "inline": true
                     },
                     {
-                      "name": "```AUXILLERY```",
+                      "name": "```AUXILLERY [AUX]```",
                       "value": aux6string,
                       "inline": true
                     },
