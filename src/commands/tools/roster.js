@@ -52,23 +52,23 @@ async execute(interaction) {
   });
   sheetData = response.data.values
 // NOTE: Pulls info from specific cells.
-    var title = [sheetData[1][2]];
-    var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
-    var arty = ["<:hll_arty:1025570316061245541>" + sheetData[7][3],"<:hll_arty:1025570316061245541>" + sheetData[8][3],"<:hll_arty:1025570316061245541>" + sheetData[9][3],"<:hll_arty:1025570316061245541>" + sheetData[10][3],"<:hll_arty:1025570316061245541>" + sheetData[11][3],"<:hll_arty:1025570316061245541>" + sheetData[12][3]];
-    var recon = ["<:hll_sl:1025510738724393000>" + sheetData[15][3],"<:hll_sl:1025510738724393000>" + sheetData[17][3]];
-    var snipe = [sheetData[20][3]];
-    var tank1 = ["<:hll_sl:1025510738724393000>" + sheetData[5][6],"<:hll_tank:1025570370046132275>" + sheetData[6][6],"<:hll_tank:1025570370046132275>" + sheetData[7][6]];
-    var tank2 = ["<:hll_sl:1025510738724393000>" + sheetData[10][6],"<:hll_tank:1025570370046132275>" + sheetData[11][6],"<:hll_tank:1025570370046132275>" + sheetData[12][6]];
-    var tank3 = ["<:hll_sl:1025510738724393000>" + sheetData[15][6],"<:hll_tank:1025570370046132275>" + sheetData[16][6]];
-    var reconTranspo = ["<:hll_sl:1025510738724393000>" + sheetData[19][6],"<:hll_sniper:1025570351087882260>" + sheetData[20][6]];
-    var irn1 = ["<:hll_sl:1025510738724393000>" + sheetData[5][9],"<:hll_sl:1025510738724393000>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" + sheetData[7][9],"<:hll_infantry:1025923730582548532>" + sheetData[8][9],"<:hll_infantry:1025923730582548532>" + sheetData[9][9],"<:hll_infantry:1025923730582548532>" + sheetData[10][9]];
-    var thr2 = ["<:hll_sl:1025510738724393000>" + sheetData[5][12],"<:hll_sl:1025510738724393000>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" + sheetData[7][12],"<:hll_infantry:1025923730582548532>" + sheetData[8][12],"<:hll_infantry:1025923730582548532>" + sheetData[9][12],"<:hll_infantry:1025923730582548532>" + sheetData[10][12]];
-    var cpt3 = ["<:hll_sl:1025510738724393000>" + sheetData[5][15],"<:hll_sl:1025510738724393000>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" + sheetData[7][15],"<:hll_infantry:1025923730582548532>" + sheetData[8][15],"<:hll_infantry:1025923730582548532>" + sheetData[9][15],"<:hll_infantry:1025923730582548532>" + sheetData[10][15]];
-    var ant4 = ["<:hll_sl:1025510738724393000>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" + sheetData[15][9],"<:hll_infantry:1025923730582548532>" + sheetData[16][9],"<:hll_infantry:1025923730582548532>" + sheetData[17][9]];
-    var hlk5 = ["<:hll_sl:1025510738724393000>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" + sheetData[15][12],"<:hll_infantry:1025923730582548532>" + sheetData[16][12],"<:hll_infantry:1025923730582548532>" + sheetData[17][12]];
-    var aux6 = ["<:hll_sl:1025510738724393000>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" + sheetData[16][15]];
-    var fxt7 = ["<:hll_infantry:1025923730582548532>" + sheetData[19][15]];
-    var prb = ["<:hll_sl:1025510738724393000>" + sheetData[19][12],"<:hll_infantry:1025923730582548532>" + sheetData[20][12]];
+var title = [sheetData[1][2]];
+var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
+var arty = ["<:hll_arty:1025923654615310338>" + sheetData[7][3],"<:hll_arty:1025923654615310338>" + sheetData[8][3],"<:hll_arty:1025923654615310338>" + sheetData[9][3],"<:hll_arty:1025923654615310338>" + sheetData[10][3],"<:hll_arty:1025923654615310338>" + sheetData[11][3],"<:hll_arty:1025923654615310338>" + sheetData[12][3]];
+var recon = ["<:hll_sl:1025923709707497602>" + sheetData[15][3],"<:hll_sl:1025923709707497602>" + sheetData[17][3]];
+var snipe = [sheetData[20][3]];
+var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
+var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
+var tank3 = ["<:hll_sl:1025923709707497602>" + sheetData[15][6],"<:hll_tank:1025923672604684318>" + sheetData[16][6]];
+var reconTranspo = ["<:hll_sl:1025923709707497602>" + sheetData[19][6],"<:hll_sniper:1025570351087882260>" + sheetData[20][6]];
+var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_sl:1025923709707497602>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" +sheetData[7][9],"<:hll_infantry:1025923730582548532>" +sheetData[8][9],"<:hll_infantry:1025923730582548532>" +sheetData[9][9],"<:hll_infantry:1025923730582548532>" +sheetData[10][9]];
+var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
+var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][15],"<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15],"<:hll_infantry:1025923730582548532>" +sheetData[8][15],"<:hll_infantry:1025923730582548532>" +sheetData[9][15],"<:hll_infantry:1025923730582548532>" +sheetData[10][15]];
+var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" +sheetData[15][9],"<:hll_infantry:1025923730582548532>" +sheetData[16][9],"<:hll_infantry:1025923730582548532>" +sheetData[17][9]];
+var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" +sheetData[15][12],"<:hll_infantry:1025923730582548532>" +sheetData[16][12],"<:hll_infantry:1025923730582548532>" +sheetData[17][12]];
+var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" +sheetData[16][15]];
+var fxt7 = ["<:hll_infantry:1025923730582548532>" +sheetData[19][15]];
+var prb = ["<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_infantry:1025923730582548532>" +sheetData[20][12]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
