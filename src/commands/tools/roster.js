@@ -48,27 +48,29 @@ async execute(interaction) {
   // Get roster from sheet
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: '1T9DalQHGUat5iU2Mth3T1649EXBVjoHgWAay_6qYY90',
-    range: `${sheetsNames[2]}!A1:T28`,
+    range: `${sheetsNames[1]}!A1:T28`,
   });
   sheetData = response.data.values
 // NOTE: Pulls info from specific cells.
-    var cmdr = [sheetData[5][2]];
-    var arty = [sheetData[7][3],sheetData[8][3],sheetData[9][3],sheetData[10][3],sheetData[11][3]];
-    var recon = [sheetData[14][3],sheetData[16][3]];
+    var title = [sheetData[1][2]];
+    var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
+    var arty = ["<:hll_arty:1025570316061245541>" + sheetData[7][3],"<:hll_arty:1025570316061245541>" + sheetData[8][3],"<:hll_arty:1025570316061245541>" + sheetData[9][3],"<:hll_arty:1025570316061245541>" + sheetData[10][3],"<:hll_arty:1025570316061245541>" + sheetData[11][3],"<:hll_arty:1025570316061245541>" + sheetData[12][3]];
+    var recon = ["<:hll_sl:1025510738724393000>" + sheetData[15][3],"<:hll_sl:1025510738724393000>" + sheetData[17][3]];
     var snipe = [sheetData[20][3]];
-    var tank1 = [sheetData[5][6],sheetData[6][6],sheetData[7][6]];
-    var tank2 = [sheetData[10][6],sheetData[11][6],sheetData[12][6]];
-    var tank3 = [sheetData[15][6],sheetData[16][6]];
-    var reconTranspo = [sheetData[19][6],sheetData[20][6]];
-    var irn1 = [sheetData[5][9],sheetData[6][9],sheetData[7][9],sheetData[8][9],sheetData[9][9],sheetData[10][9]];
-    var thr2 = [sheetData[5][12],sheetData[6][12],sheetData[7][12],sheetData[8][12],sheetData[9][12],sheetData[10][12]];
-    var cpt3 = [sheetData[5][15],sheetData[6][15],sheetData[7][15],sheetData[8][15],sheetData[9][15],sheetData[10][15]];
-    var ant4 = [sheetData[14][9],sheetData[15][9],sheetData[16][9],sheetData[17][9]];
-    var hlk5 = [sheetData[14][12],sheetData[15][12],sheetData[16][12],sheetData[17][12]];
-    var aux6 = [sheetData[15][15],sheetData[16][15]];
-    var fxt7 = [sheetData[19][15]];
-    var prb = [sheetData[19][12],sheetData[20][12]];
+    var tank1 = ["<:hll_sl:1025510738724393000>" + sheetData[5][6],"<:hll_tank:1025570370046132275>" + sheetData[6][6],"<:hll_tank:1025570370046132275>" + sheetData[7][6]];
+    var tank2 = ["<:hll_sl:1025510738724393000>" + sheetData[10][6],"<:hll_tank:1025570370046132275>" + sheetData[11][6],"<:hll_tank:1025570370046132275>" + sheetData[12][6]];
+    var tank3 = ["<:hll_sl:1025510738724393000>" + sheetData[15][6],"<:hll_tank:1025570370046132275>" + sheetData[16][6]];
+    var reconTranspo = ["<:hll_sl:1025510738724393000>" + sheetData[19][6],"<:hll_sniper:1025570351087882260>" + sheetData[20][6]];
+    var irn1 = ["<:hll_sl:1025510738724393000>" + sheetData[5][9],"<:hll_sl:1025510738724393000>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" + sheetData[7][9],"<:hll_infantry:1025923730582548532>" + sheetData[8][9],"<:hll_infantry:1025923730582548532>" + sheetData[9][9],"<:hll_infantry:1025923730582548532>" + sheetData[10][9]];
+    var thr2 = ["<:hll_sl:1025510738724393000>" + sheetData[5][12],"<:hll_sl:1025510738724393000>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" + sheetData[7][12],"<:hll_infantry:1025923730582548532>" + sheetData[8][12],"<:hll_infantry:1025923730582548532>" + sheetData[9][12],"<:hll_infantry:1025923730582548532>" + sheetData[10][12]];
+    var cpt3 = ["<:hll_sl:1025510738724393000>" + sheetData[5][15],"<:hll_sl:1025510738724393000>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" + sheetData[7][15],"<:hll_infantry:1025923730582548532>" + sheetData[8][15],"<:hll_infantry:1025923730582548532>" + sheetData[9][15],"<:hll_infantry:1025923730582548532>" + sheetData[10][15]];
+    var ant4 = ["<:hll_sl:1025510738724393000>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" + sheetData[15][9],"<:hll_infantry:1025923730582548532>" + sheetData[16][9],"<:hll_infantry:1025923730582548532>" + sheetData[17][9]];
+    var hlk5 = ["<:hll_sl:1025510738724393000>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" + sheetData[15][12],"<:hll_infantry:1025923730582548532>" + sheetData[16][12],"<:hll_infantry:1025923730582548532>" + sheetData[17][12]];
+    var aux6 = ["<:hll_sl:1025510738724393000>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" + sheetData[16][15]];
+    var fxt7 = ["<:hll_infantry:1025923730582548532>" + sheetData[19][15]];
+    var prb = ["<:hll_sl:1025510738724393000>" + sheetData[19][12],"<:hll_infantry:1025923730582548532>" + sheetData[20][12]];
 //creates the strings from the cells above.
+    var titlestring = "";
     var cmdrstring = "";
     var artystring = "";
     var reconstring = "";
@@ -85,7 +87,8 @@ async execute(interaction) {
     var aux6string = "";
     var fxt7string = "";
     var prbstring = "";
-//applys strings to named cells.    
+//applys strings to named cells.  
+    titlestring = embedString(titlestring, title);  
     cmdrstring = embedString(cmdrstring, cmdr);
     artystring = embedString(artystring, arty);
     reconstring = embedString(reconstring, recon);
@@ -104,8 +107,8 @@ async execute(interaction) {
     prbstring = embedString(prbstring, prb);
 
     const rosterEmbed = new EmbedBuilder()
-                .setTitle("♿ GOF-ish Match Roster ♿")
-                .setDescription("Check if you're playing below:")
+                .setTitle("♿ **"+ titlestring +"**")
+                .setDescription("**Roster for the upcoming match:**")
                 .setColor(0x800080)
                 //.setImage("https://cdn.discordapp.com/attachments/936543359974121542/1008366676200411287/GOF.gif")({extension: 'mp4', size: 4096})
                 .setFooter({
