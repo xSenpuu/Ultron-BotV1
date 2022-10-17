@@ -9,7 +9,7 @@ module.exports = {
         const channel = interaction.guild.channels.cache.get(channelID)
         const input = interaction.fields.getTextInputValue('results')+"\n"+"ㅤ".repeat(28)
         const matchEmbed = new EmbedBuilder()
-        .setTitle("♿ Match Result ♿")
+        .setTitle("Match Result")
         .setDescription(input)
         .setColor(0x800080)
         .setThumbnail(interaction.guild.iconURL())

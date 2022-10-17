@@ -55,7 +55,7 @@ async execute(interaction) {
 var title = [sheetData[1][2]];
 var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
 var arty = ["<:hll_arty:1025923654615310338>" + sheetData[7][3],"<:hll_arty:1025923654615310338>" + sheetData[8][3],"<:hll_arty:1025923654615310338>" + sheetData[9][3],"<:hll_arty:1025923654615310338>" + sheetData[10][3],"<:hll_arty:1025923654615310338>" + sheetData[11][3],"<:hll_arty:1025923654615310338>" + sheetData[12][3]];
-var recon = ["<:Spotter:1009174340832595968>" + sheetData[15][3],"<:Spotter:1009174340832595968>" + sheetData[17][3]];
+var recon = ["<:Spotter:1031569808128487424>" + sheetData[15][3],"<:Spotter:1031569808128487424>" + sheetData[17][3]];
 var snipe = [sheetData[20][3]];
 var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
 var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
@@ -67,9 +67,9 @@ var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][15],"<:hll_sl:1025923
 var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" +sheetData[15][9],"<:hll_infantry:1025923730582548532>" +sheetData[16][9]];
 var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" +sheetData[15][12],"<:hll_infantry:1025923730582548532>" +sheetData[16][12]];
 var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" +sheetData[16][15]];
-var fxt7 = ["<:ico_HLLTorchGER:783998505579446273>" + sheetData[19][15]];
+var fxt7 = ["<:simp:1031570292125999115>" + sheetData[19][15]];
 var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
-var mg = ["<:ico_HLLMachineGunner:732358420853686322>" + sheetData[19][9], "<:ico_HLLMachineGunner:732358420853686322>" + sheetData[20][9]];
+var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714068>" + sheetData[20][9]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
