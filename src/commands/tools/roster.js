@@ -56,20 +56,20 @@ var title = [sheetData[1][2]];
 var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
 var arty = ["<:hll_arty:1025923654615310338>" + sheetData[7][3],"<:hll_arty:1025923654615310338>" + sheetData[8][3],"<:hll_arty:1025923654615310338>" + sheetData[9][3],"<:hll_arty:1025923654615310338>" + sheetData[10][3],"<:hll_arty:1025923654615310338>" + sheetData[11][3],"<:hll_arty:1025923654615310338>" + sheetData[12][3]];
 var recon = ["<:Spotter:1031569808128487424>" + sheetData[15][3],"<:Spotter:1031569808128487424>" + sheetData[17][3]];
-var snipe = [sheetData[20][3]];
+var snipe = ["<:hll_tank:1025923672604684318>" + sheetData[20][3]];
 var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
 var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
 var tank3 = ["<:hll_sl:1025923709707497602>" + sheetData[15][6],"<:hll_tank:1025923672604684318>" + sheetData[16][6]];
 var reconTranspo = ["<:hll_sl:1025923709707497602>" + sheetData[19][6],"<:hll_sniper:1025923689700671571>" + sheetData[20][6]];
-var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_sl:1025923709707497602>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" +sheetData[7][9],"<:hll_infantry:1025923730582548532>" +sheetData[8][9],"<:hll_infantry:1025923730582548532>" +sheetData[9][9],"<:hll_infantry:1025923730582548532>" +sheetData[10][9]];
-var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
-var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][15],"<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15],"<:hll_infantry:1025923730582548532>" +sheetData[8][15],"<:hll_infantry:1025923730582548532>" +sheetData[9][15],"<:hll_infantry:1025923730582548532>" +sheetData[10][15]];
-var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[14][9],"<:hll_infantry:1025923730582548532>" +sheetData[15][9],"<:hll_infantry:1025923730582548532>" +sheetData[16][9]];
-var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[14][12],"<:hll_infantry:1025923730582548532>" +sheetData[15][12],"<:hll_infantry:1025923730582548532>" +sheetData[16][12]];
+var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_infantry:1025923730582548532>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" +sheetData[7][9],"<:hll_sl:1025923709707497602>" +sheetData[8][9],"<:hll_infantry:1025923730582548532>" +sheetData[9][9],"<:hll_infantry:1025923730582548532>" +sheetData[10][9], "<:hll_sl:1025923709707497602>" +sheetData[11][9],"<:hll_infantry:1025923730582548532>" +sheetData[12][9], "<:hll_infantry:1025923730582548532>" +sheetData[13][9]];
+//var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
+var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_infantry:1025923730582548532>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_sl:1025923709707497602>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12], "<:hll_sl:1025923709707497602>" +sheetData[11][12], "<:hll_infantry:1025923730582548532>" +sheetData[12][12],"<:hll_infantry:1025923730582548532>" +sheetData[13][12],];
+var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_infantry:1025923730582548532>" +sheetData[17][12],"<:hll_infantry:1025923730582548532>" +sheetData[18][12]];
+var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:hll_infantry:1025923730582548532>" +sheetData[17][9],"<:hll_infantry:1025923730582548532>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:hll_infantry:1025923730582548532>" +sheetData[20][9]];
 var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" +sheetData[16][15]];
-var fxt7 = ["<:simp:1031570292125999115>" + sheetData[19][15]];
+var simp7 = ["<:simp:1031570292125999115>" + sheetData[11][15]];
 var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
-var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714068>" + sheetData[20][9]];
+var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:1031570306323714068>" + sheetData[17][15]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
@@ -81,12 +81,12 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
     var tank3string = "";
     var reconTranspostring = "";
     var irn1string = "";
-    var thr2string = "";
+    //var thr2string = "";
     var cpt3string = "";
     var ant4string = "";
     var hlk5string = "";
     var aux6string = "";
-    var fxt7string = "";
+    var simp7string = "";
     var prbstring = "";
     var mgstring = "";
 //applys strings to named cells.  
@@ -100,12 +100,12 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
     tank3string = embedString(tank3string, tank3);
     reconTranspostring = embedString(reconTranspostring, reconTranspo);
     irn1string = embedString(irn1string, irn1);
-    thr2string = embedString(thr2string, thr2);
+    //thr2string = embedString(thr2string, thr2);
     cpt3string = embedString(cpt3string, cpt3);
     ant4string = embedString(ant4string, ant4);
     hlk5string = embedString(hlk5string, hlk5);
     aux6string = embedString(aux6string, aux6);
-    fxt7string = embedString(fxt7string, fxt7);
+    simp7string = embedString(simp7string, simp7);
     prbstring = embedString(prbstring, prb);
     mgstring = embedString(mgstring, mg);
 
@@ -127,7 +127,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
                     },
                                     {
                       "name": "```SIMPS [SMP]```",
-                      "value": fxt7string,
+                      "value": simp7string,
                       "inline": true
                     },
                     {
@@ -156,13 +156,18 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
                       "inline": true
                     },
                     {
-                      "name": "```2 | THOR [THR] 🔵```",
-                      "value": thr2string,
+                      "name": "ㅤ",
+                      "value": "ㅤ",
                       "inline": true
                     },
                     {
-                      "name": "```3 | CPT AMERICA [CPT] 🔴```",
+                      "name": "```2 | CPT AMERICA [CPT] 🔴```",
                       "value": cpt3string,
+                      "inline": true
+                    },
+                    {
+                      "name": "```3 | HULK [HLK] 🟢```",
+                      "value": hlk5string,
                       "inline": true
                     },
                     {
@@ -170,12 +175,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
                       "value": ant4string,
                       "inline": true
                     },
-                        {
-                      "name": "```5 | HULK [HLK] 🟢```",
-                      "value": hlk5string,
-                      "inline": true
-                    },
-                                    {
+                    {
                       "name": "```ARTILLERY```",
                       "value": artystring,
                       "inline": true
@@ -198,6 +198,11 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[19][9], "<:mg:1031570306323714
                             {
                       "name": "```RECON TRANSPORT```",
                       "value": reconTranspostring,
+                      "inline": true
+                    },
+                    {
+                      "name": "ㅤ",
+                      "value": "ㅤ",
                       "inline": true
                     },
                     {
