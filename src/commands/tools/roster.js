@@ -66,9 +66,9 @@ var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_infantry:10
 var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_infantry:1025923730582548532>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_sl:1025923709707497602>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12], "<:hll_sl:1025923709707497602>" +sheetData[11][12], "<:hll_infantry:1025923730582548532>" +sheetData[12][12],"<:hll_infantry:1025923730582548532>" +sheetData[13][12],];
 var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_infantry:1025923730582548532>" +sheetData[17][12],"<:hll_infantry:1025923730582548532>" +sheetData[18][12]];
 var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:hll_infantry:1025923730582548532>" +sheetData[17][9],"<:hll_infantry:1025923730582548532>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:hll_infantry:1025923730582548532>" +sheetData[20][9]];
-var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[15][15],"<:hll_infantry:1025923730582548532>" +sheetData[16][15]];
+var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15]];
 var simp7 = ["<:simp:1031570292125999115>" + sheetData[11][15]];
-var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
+//var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
 var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:1031570306323714068>" + sheetData[17][15]];
 //creates the strings from the cells above.
     var titlestring = "";
@@ -87,7 +87,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
     var hlk5string = "";
     var aux6string = "";
     var simp7string = "";
-    var prbstring = "";
+    //var prbstring = "";
     var mgstring = "";
 //applys strings to named cells.  
     titlestring = embedString(titlestring, title);  
@@ -106,7 +106,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
     hlk5string = embedString(hlk5string, hlk5);
     aux6string = embedString(aux6string, aux6);
     simp7string = embedString(simp7string, simp7);
-    prbstring = embedString(prbstring, prb);
+    //prbstring = embedString(prbstring, prb);
     mgstring = embedString(mgstring, mg);
 
     const rosterEmbed = new EmbedBuilder()
@@ -178,11 +178,6 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                     {
                       "name": "```ARTILLERY```",
                       "value": artystring,
-                      "inline": true
-                    },
-                        {
-                      "name": "```DEFENCE PROBE [PRB] 🟢```",
-                      "value": prbstring,
                       "inline": true
                     },
                     {
