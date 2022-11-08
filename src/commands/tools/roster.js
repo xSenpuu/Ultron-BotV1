@@ -196,11 +196,6 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                       "inline": true
                     },
                     {
-                      "name": "ㅤ",
-                      "value": "ㅤ",
-                      "inline": true
-                    },
-                    {
                       "name": "```MG FLEX```",
                       "value": mgstring,
                       "inline": true
