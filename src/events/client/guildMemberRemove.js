@@ -23,8 +23,7 @@ module.exports = {
       })
 
         const channel = interaction.guild.channels.cache.get(channelID)
-        if (member.roles.cache.has(GARRI))
-        channel.send({embeds: [garriembed], ephemeral: false });
-        return;
+        if (member.roles.cache.get(GARRI)= true){
+        channel.send({embeds: [garriembed], ephemeral: false })};
     }, 
   };
