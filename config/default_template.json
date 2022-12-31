@@ -1,0 +1,15 @@
+{
+    "ultron":{
+        "token": <your token> ,
+        "client_id": <your client id> ,
+        "guild_id": "741311245407486111"
+    },
+    "channels":{
+        "join": "918575240651624508",
+        "prospect": "1019418308350595122"  
+    },
+    "roles":{
+        "garri": "758397862399836260",
+        "prospect": "960908800787882004"
+    }
+}

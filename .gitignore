@@ -127,4 +127,4 @@ dist
 .pnp.*
 
 backups/
-config/*_template.json
+config/default.json
