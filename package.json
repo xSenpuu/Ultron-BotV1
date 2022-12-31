@@ -2,6 +2,7 @@
   "dependencies": {
     "@discordjs/rest": "^1.0.1",
     "chalk": "^4.1.2",
+    "config": "^3.3.8",
     "discord-api-types": "^0.37.1",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",

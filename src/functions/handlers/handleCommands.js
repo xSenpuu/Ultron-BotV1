@@ -1,10 +1,11 @@
+const config = require('config');
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const fs = require("fs");
 
-const TOKEN= process.env.TOKEN;
-const CLIENT_ID = process.env.CLIENT_ID;
-const GUILD_ID= process.env.GUILD_ID;
+const TOKEN= config.get('ultron.token');
+const CLIENT_ID = config.get('ultron.client_id');
+const GUILD_ID= config.get('ultron.guild_id');
 
 module.exports = (client) => {
   client.handleCommands = async () => {
@@ -15,8 +16,6 @@ module.exports = (client) => {
 
     for(const suiteFolder of suiteFolders){
       
-            
-
       var files = fs
         .readdirSync(`./src/suites/${suiteFolder}/commands`)
         .filter((file) => file.endsWith(".js"));
@@ -39,8 +38,6 @@ module.exports = (client) => {
         const commandFiles = fs
           .readdirSync(`./src/suites/${suiteFolder}/commands/${folder}`)
           .filter((file) => file.endsWith(".js"));
-
-        
         
         for (const file of commandFiles) {
           const command = require(`../../suites/${suiteFolder}/commands/${folder}/${file}`);

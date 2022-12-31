@@ -1,3 +1,4 @@
+const config = require('config');
 const { readdirSync } = require("fs");
 
 module.exports = (client) => {
