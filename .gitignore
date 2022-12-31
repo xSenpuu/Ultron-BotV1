@@ -127,4 +127,4 @@ dist
 .pnp.*
 
 backups/
-config/default.json
+config/
