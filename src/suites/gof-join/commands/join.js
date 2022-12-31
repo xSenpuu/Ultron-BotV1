@@ -1,3 +1,5 @@
+const config = require('config');
+
 const {
   SlashCommandBuilder,
   ActionRowBuilder,
@@ -13,7 +15,7 @@ module.exports = {
     .setDescription("Join GOF embed")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
   async execute(interaction, client) {
-    const channelID = '918575240651624508' //#join-gof
+    const channelID = config.get('channels.join') //#join-gof
     const channel = interaction.guild.channels.cache.get(channelID)
     const join = new ButtonBuilder()
       .setCustomId("join-us")

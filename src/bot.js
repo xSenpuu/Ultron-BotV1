@@ -1,5 +1,6 @@
-require("dotenv").config();
-const TOKEN= process.env.TOKEN;
+
+const config = require('config');
+const TOKEN = config.get('ultron.token');
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
