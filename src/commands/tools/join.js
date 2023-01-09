@@ -13,7 +13,7 @@ module.exports = {
     .setDescription("Join GOF embed")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
   async execute(interaction, client) {
-    const channelID = process.env.JOIN_CHANNEL //#join-gof
+    const channelID = '918575240651624508' //#join-gof
     const channel = interaction.guild.channels.cache.get(channelID)
     const join = new ButtonBuilder()
       .setCustomId("join-us")
