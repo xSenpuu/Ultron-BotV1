@@ -19,7 +19,7 @@ module.exports = {
 		let pings = []
 		let nicknames = []
 		prospects.forEach(prospect => {
-			pings.push(`<@!${prospect.user.id}>`)
+			pings.push(`<@${prospect.user.id}>`)
 
 			let tempName = prospect.nickname
 			if (!tempName) {
