@@ -21,6 +21,7 @@ module.exports = (client) => {
         .filter((file) => file.endsWith(".js"));
 
         for (const file of files) {
+          if (config.get("ignore_files").includes(file)) continue;
           const command = require(`../../suites/${suiteFolder}/commands/${file}`);
           commands.set(command.data.name, command);
           commandArray.push(command.data.toJSON());
@@ -40,6 +41,7 @@ module.exports = (client) => {
           .filter((file) => file.endsWith(".js"));
         
         for (const file of commandFiles) {
+          if (config.get("ignore_files").includes(file)) continue;
           const command = require(`../../suites/${suiteFolder}/commands/${folder}/${file}`);
           commands.set(command.data.name, command);
           commandArray.push(command.data.toJSON());

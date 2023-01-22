@@ -17,6 +17,7 @@ module.exports = (client) => {
         switch (folder) {
           case "client":
             for (const file of eventFiles) {
+              if (config.get("ignore_files").includes(file)) continue;
               const event = require(`../../suites/${suiteFolder}/events/${folder}/${file}`);
               if (event.once) client.once(event.name, (...args) => event.execute(...args, client));
               else client.on(event.name, (...args) => event.execute(...args, client));

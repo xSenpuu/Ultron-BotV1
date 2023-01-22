@@ -17,6 +17,7 @@ module.exports = (client) => {
         switch (folder) {
           case "buttons":
             for (const file of componentFiles) {
+              if (config.get("ignore_files").includes(file)) continue;
               const button = require(`../../suites/${suiteFolder}/components/${folder}/${file}`);
               buttons.set(button.data.name, button);
             }
@@ -24,6 +25,7 @@ module.exports = (client) => {
 
           case "modals":
             for (const file of componentFiles) {
+              if (config.get("ignore_files").includes(file)) continue;
               const modal = require(`../../suites/${suiteFolder}/components/${folder}/${file}`);
               modals.set(modal.data.name, modal);
             }
