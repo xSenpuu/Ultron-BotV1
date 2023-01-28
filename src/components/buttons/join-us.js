@@ -1,6 +1,6 @@
 const { Guilds, EmbedBuilder } = require("discord.js");
-const PROSPECT = '960908800787882004'
-const GARRI = '758397862399836260'
+const PROSPECT = process.env.PROSPECTS_R
+const GARRI = process.env.GARRI_R
 module.exports = {
     data: {
         name: `join-us`
@@ -10,12 +10,12 @@ module.exports = {
             const buttonID = interaction.customId;
             if (buttonID === 'join-us') { // get button by customId set below
                 const member = interaction.member; // get member from the interaction - person who clicked the button
-                const channelID = '1019418308350595122' //prospects
+                const channelID = process.env.PROSPECTS_C //prospects
                 const channel = interaction.guild.channels.cache.get(channelID)
                 //console.log(member);
                 const leftembed = new EmbedBuilder()
                 .setTitle(`Prospect Notification`)
-                .setDescription(`<@${interaction.user.id}> just removed the <@&${PROSPECT}> role!`)
+                .setDescription(`${member.displayName} just removed the <@&${PROSPECT}> role!`)
                 .setColor(0x800080)
                 .setFooter({
                 iconURL:
@@ -24,7 +24,7 @@ module.exports = {
               })
               const prospectembed = new EmbedBuilder()
               .setTitle(`Prospect Notification`)
-              .setDescription(`<@${interaction.user.id}> just picked up the <@&${PROSPECT}> role!`)
+              .setDescription(`${member.displayName} just picked up the <@&${PROSPECT}> role!`)
               .setColor(0x800080)
               .setFooter({
               iconURL:

@@ -1,6 +1,6 @@
 require("dotenv").config();
 const TOKEN= process.env.TOKEN;
-const { Client, Collection, GatewayIntentBits } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
 const fs = require("fs");
 
 const client = new Client({ 
@@ -11,6 +11,7 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.DirectMessages,
   ],
+  partials: [Partials.GuildMember]
   });
 
 client.commands = new Collection();
