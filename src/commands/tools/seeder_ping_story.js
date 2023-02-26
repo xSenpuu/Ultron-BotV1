@@ -57,7 +57,7 @@ module.exports = {
 
         response_text = `${role} Let me tell you a story about ${garri.displayName}...` +
             story.data.choices[0].text +
-            "\n\nMoral of the Story: GOF1";
+            "\n\nMoral of the Story: Seed GOF1!";
 
         await channel.send(response_text)
         await interaction.editReply({ content: "Ping successfully sent to seeder channel", ephemeral: true })
