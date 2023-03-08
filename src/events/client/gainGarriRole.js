@@ -4,11 +4,16 @@ module.exports = {
   name: `guildMemberUpdate`,
   async execute(oldMember, newMember, client) {
 
+    return
+
     const roleID = process.env.GARRI_R
     const channelID = process.env.ADMIN_C
 
-    if(oldMember.roles.cache.has(roleID)) return;
-    if(newMember.roles.cache.has(roleID)){
+    console.log(oldMember.roles)
+    console.log(newMember.roles)
+
+    if (oldMember.roles.find(r => r.id === roleID)) return;
+    if (newMember.roles.find(r => r.id === roleID)) {
 
       const addembed = new EmbedBuilder()
         .setTitle(`Garri Role Granted`)
@@ -24,7 +29,7 @@ module.exports = {
 
       //channel.send(`<@${interaction.user.id}>`)
       channel.send({ content: null, embeds: [addembed], ephemeral: false })
-    
+
     }
   },
 };
