@@ -5,11 +5,12 @@ module.exports = {
         name: `results-modal`
     },
     async execute(interaction, client){
-        const channelID = '970103262135058503' //Match-History
+        const channelID = process.env.MATCH_HISTORY
         const channel = interaction.guild.channels.cache.get(channelID)
-        const input = interaction.fields.getTextInputValue('results')+"\n"+"ㅤ".repeat(28)
+        const team = interaction.fields.getTextInputValue('team')
+        const input = interaction.fields.getTextInputValue('input')+"\n"+"ㅤ".repeat(28)
         const matchEmbed = new EmbedBuilder()
-        .setTitle("Match Result")
+        .setTitle("♿ Garri's OnlyFans vs "+ team +"")
         .setDescription(input)
         .setColor(0x800080)
         .setThumbnail(interaction.guild.iconURL())
@@ -20,6 +21,6 @@ module.exports = {
         });
 
     channel.send({ embeds: [matchEmbed], ephemeral: false });
-    await interaction.reply ({content: 'Updated the Match History', ephemeral: true});
+    await interaction.reply ({content: 'Match History has been updated!', ephemeral: true});
          }
     }

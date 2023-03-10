@@ -18,14 +18,24 @@ module.exports = {
     .setCustomId(`results-modal`)
     .setTitle(`Match Result`);
 
-    const textInput = new TextInputBuilder()
-        .setCustomId('results')
-        .setLabel('What was the match result?')
+    const team = new TextInputBuilder()
+        .setCustomId('team')
+        .setLabel('Who was the match against?')
+        .setRequired(true)
+        .setStyle(TextInputStyle.Short)
+        .setPlaceholder("Who was the match against?")
+        
+    const input = new TextInputBuilder()
+        .setCustomId('input')
+        .setLabel('Enter the Match Result here!')
         .setRequired(true)
         .setStyle(TextInputStyle.Paragraph)
-        .setPlaceholder("Enter the Match Result here")
+        .setPlaceholder("Enter the Match Result here!");
 
-        modal.addComponents(new ActionRowBuilder().addComponents(textInput));
+        const firstactionrow = new ActionRowBuilder().addComponents(team)
+        const secondactionrow = new ActionRowBuilder().addComponents(input)
+
+        modal.addComponents(firstactionrow, secondactionrow);
 
         await interaction.showModal(modal);
   },
