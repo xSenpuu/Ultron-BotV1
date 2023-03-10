@@ -69,7 +69,7 @@ var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:hll_infantry:1
 var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15]];
 var simp7 = ["<:simp:1031570292125999115>" + sheetData[11][15], "<:simp:1031570292125999115>" + sheetData[12][15]];
 //var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
-var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:1031570306323714068>" + sheetData[17][15]];
+var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:1031570306323714068>" + sheetData[17][15], "<:mg:1031570306323714068>" + sheetData[18][15]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
