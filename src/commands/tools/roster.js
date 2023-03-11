@@ -55,7 +55,7 @@ async execute(interaction) {
 var title = [sheetData[1][2]];
 var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
 var arty = ["<:hll_arty:1025923654615310338>" + sheetData[8][3]];
-var recon = ["<:Spotter:1031569808128487424>" + sheetData[11][3],"<:hll_sniper:1025923689700671571>" + sheetData[12][3], "<:Spotter:1031569808128487424>" + sheetData[13][3], "<:hll_sniper:1025923689700671571>" + sheetData[14][3]];
+var recon = ["<:Spotter:1031569808128487424>" + sheetData[11][3],"<:hll_sniper:1025923689700671571>" + sheetData[12][3], "<:Spotter:1031569808128487424>" + sheetData[14][3], "<:hll_sniper:1025923689700671571>" + sheetData[15][3]];
 //var snipe = ["<:hll_tank:1025923672604684318>" + sheetData[20][3]];
 var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
 var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
