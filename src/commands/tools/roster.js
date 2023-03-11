@@ -35,7 +35,7 @@ function embedString(string, data){
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("roster")
-    .setDescription("Display Roster From Google")
+    .setDescription("Display Roster From Google Spreadsheet")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
 async execute(interaction) {
   // Get sheet names
@@ -54,28 +54,28 @@ async execute(interaction) {
 // NOTE: Pulls info from specific cells.
 var title = [sheetData[1][2]];
 var cmdr = ["<:hll_com:1025923751948341268>" + sheetData[5][2]];
-var arty = ["<:hll_arty:1025923654615310338>" + sheetData[7][3],"<:hll_arty:1025923654615310338>" + sheetData[8][3],"<:hll_arty:1025923654615310338>" + sheetData[9][3],"<:hll_arty:1025923654615310338>" + sheetData[10][3],"<:hll_arty:1025923654615310338>" + sheetData[11][3],"<:hll_arty:1025923654615310338>" + sheetData[12][3]];
-var recon = ["<:Spotter:1031569808128487424>" + sheetData[15][3],"<:hll_sniper:1025923689700671571>" + sheetData[16][3], "<:Spotter:1031569808128487424>" + sheetData[17][3]];
-var snipe = ["<:hll_tank:1025923672604684318>" + sheetData[20][3]];
+var arty = ["<:hll_arty:1025923654615310338>" + sheetData[8][3]];
+var recon = ["<:Spotter:1031569808128487424>" + sheetData[11][3],"<:hll_sniper:1025923689700671571>" + sheetData[12][3], "<:Spotter:1031569808128487424>" + sheetData[13][3], "<:hll_sniper:1025923689700671571>" + sheetData[14][3]];
+//var snipe = ["<:hll_tank:1025923672604684318>" + sheetData[20][3]];
 var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
 var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
 var tank3 = ["<:hll_sl:1025923709707497602>" + sheetData[15][6],"<:hll_tank:1025923672604684318>" + sheetData[16][6]];
 var reconTranspo = ["<:hll_sl:1025923709707497602>" + sheetData[19][6],"<:hll_sniper:1025923689700671571>" + sheetData[20][6]];
-var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:hll_infantry:1025923730582548532>" + sheetData[6][9],"<:hll_infantry:1025923730582548532>" +sheetData[7][9],"<:hll_sl:1025923709707497602>" +sheetData[8][9],"<:hll_infantry:1025923730582548532>" +sheetData[9][9],"<:hll_infantry:1025923730582548532>" +sheetData[10][9], "<:hll_sl:1025923709707497602>" +sheetData[11][9],"<:hll_infantry:1025923730582548532>" +sheetData[12][9], "<:hll_infantry:1025923730582548532>" +sheetData[13][9]];
+var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:inf:1078036242010210374>" + sheetData[6][9],"<:inf:1078036242010210374>" +sheetData[7][9],"<:hll_sl:1025923709707497602>" +sheetData[8][9],"<:inf:1078036242010210374>" +sheetData[9][9],"<:inf:1078036242010210374>" +sheetData[10][9], "<:hll_sl:1025923709707497602>" +sheetData[11][9],"<:inf:1078036242010210374>" +sheetData[12][9], "<:inf:1078036242010210374>" +sheetData[13][9]];
 //var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
-var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_infantry:1025923730582548532>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_sl:1025923709707497602>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12], "<:hll_sl:1025923709707497602>" +sheetData[11][12], "<:hll_infantry:1025923730582548532>" +sheetData[12][12],"<:hll_infantry:1025923730582548532>" +sheetData[13][12],];
-var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_infantry:1025923730582548532>" +sheetData[17][12],"<:hll_infantry:1025923730582548532>" +sheetData[18][12],"<:hll_sl:1025923709707497602>" + sheetData[19][12],"<:hll_sl:1025923709707497602>" + sheetData[20][12]];
-var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:hll_infantry:1025923730582548532>" +sheetData[17][9],"<:hll_infantry:1025923730582548532>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:hll_infantry:1025923730582548532>" +sheetData[20][9]];
-var aux6 = ["<:hll_sl:1025923709707497602>" + sheetData[6][15],"<:hll_infantry:1025923730582548532>" +sheetData[7][15]];
-var simp7 = ["<:simp:1031570292125999115>" + sheetData[11][15], "<:simp:1031570292125999115>" + sheetData[12][15]];
+var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:inf:1078036242010210374>" + sheetData[6][12],"<:inf:1078036242010210374>" +sheetData[7][12],"<:hll_sl:1025923709707497602>" +sheetData[8][12],"<:inf:1078036242010210374>" +sheetData[9][12],"<:inf:1078036242010210374>" +sheetData[10][12], "<:hll_sl:1025923709707497602>" +sheetData[11][12], "<:inf:1078036242010210374>" +sheetData[12][12],"<:inf:1078036242010210374>" +sheetData[13][12],];
+var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_sl:1025923709707497602>" +sheetData[17][12],"<:hll_sl:1025923709707497602>" +sheetData[18][12],"<:hll_sl:1025923709707497602>" + sheetData[19][12]];
+var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:inf:1078036242010210374>" +sheetData[17][9],"<:inf:1078036242010210374>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:inf:1078036242010210374>" +sheetData[20][9]];
+var aux6 = ["<:inf:1078036242010210374>" +sheetData[7][15], "<:inf:1078036242010210374>" +sheetData[8][15]]; //thor rkts
+var simp7 = ["<:simp:1031570292125999115>" + sheetData[12][15], "<:simp:1031570292125999115>" + sheetData[13][15]];
 //var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
-var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:1031570306323714068>" + sheetData[17][15], "<:mg:1031570306323714068>" + sheetData[18][15]];
+var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714068>" + sheetData[18][15],"<:mg:1031570306323714068>" + sheetData[19][15]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
     var artystring = "";
     var reconstring = "";
-    var snipestring = "";
+    //var snipestring = "";
     var tank1string = "";
     var tank2string = "";
     var tank3string = "";
@@ -94,7 +94,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
     cmdrstring = embedString(cmdrstring, cmdr);
     artystring = embedString(artystring, arty);
     reconstring = embedString(reconstring, recon);
-    snipestring = embedString(snipestring, snipe);
+    //snipestring = embedString(snipestring, snipe);
     tank1string = embedString(tank1string, tank1);
     tank2string = embedString(tank2string, tank2);
     tank3string = embedString(tank3string, tank3);
@@ -121,18 +121,18 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                 })
                 .addFields(
                     {
-                      "name": "```CMDR```",
+                      "name": "```COMMANDER 🟪```",
                       "value": cmdrstring,
                       "inline": true
                     },
                                     {
-                      "name": "```SIMPS [SMP]```",
+                      "name": "```ROCKET [RKT] 🔵```",
                       "value": simp7string,
                       "inline": true
                     },
                     {
-                              "name": "```ARTY SNIPE```",
-                      "value": snipestring,
+                      "name": "```ARTILLERY```",
+                      "value": artystring,
                       "inline": true
                     },
                         {
@@ -151,7 +151,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                       "inline": true
                     },
                         {
-                      "name": "```1 | IRONMAN [IRN] 🟡```",
+                      "name": "<:inf1:1075236124177465367>```| IRONMAN [IRN] 🟡```",
                       "value": irn1string,
                       "inline": true
                     },
@@ -161,7 +161,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                       "inline": true
                     },
                     {
-                      "name": "```2 | CPT AMERICA [CPT] 🔴```",
+                      "name": "<:inf2:1075238335993356328>```| CPT AMERICA [CPT] 🔴```",
                       "value": cpt3string,
                       "inline": true
                     },
@@ -176,17 +176,12 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                       "inline": true
                     },
                     {
-                      "name": "```ARTILLERY```",
-                      "value": artystring,
-                      "inline": true
-                    },
-                    {
-                      "name": "```AUXILLERY [AUX]```",
+                      "name": "```THOR [THR] 🔵```",
                       "value": aux6string,
                       "inline": true
                     },
                     {
-                      "name": "```RECON```",
+                      "name": "```RECON 🟪```",
                       "value": reconstring,
                       "inline": true
                     },
@@ -196,7 +191,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[16][15], "<:mg:103157030632371
                       "inline": true
                     },
                     {
-                      "name": "```MG FLEX```",
+                      "name": "```MG | BUCKY [BUC] 🔵```",
                       "value": mgstring,
                       "inline": true
             },)

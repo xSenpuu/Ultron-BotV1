@@ -15,18 +15,11 @@ module.exports = {
           $text = `Tony Stark.. oh it's just you <@${interaction.user.id}>`
       }
 
-      $rand = Math.floor(Math.random()*2);
-      if ($rand == 0){
-          $image = `https://cdn.discordapp.com/attachments/839842871297179648/1070189851028246558/02A216DF-4DE8-47FE-BCA2-A2A66D6C174A.gif`
-      } else if($rand == 1){
-          $image = `https://media.discordapp.net/attachments/936543359974121542/1008407381409026069/GOF---3.gif`
-    }
-
         const addembed = new EmbedBuilder()
         .setTitle(`Men of peace create engines of war...`)
         .setDescription(`Welcome to **${interaction.guild.name}**, check out <#801855926511861832>. We were voted friendliest team on reddit. Here you'll find garrisons, bad puns, and obsessed losers who play this c-tier game just like you. Hop in voice and play with us.. I'd say we don't bite but we are a bunch of cunts so uh, enjoy your stay. Oh and if you wanna play comp HLL head to <#918575240651624508> and hit that :eggplant: to become a prospect.`)
         .setColor(0x800080)
-        .setImage($image)
+        .setImage("https://media.discordapp.net/attachments/936543359974121542/1008407381409026069/GOF---3.gif")
         //.setThumbnail(interaction.member.displayAvatarURL())
         //.setTimestamp(Date.now())
         //.setAuthor({
