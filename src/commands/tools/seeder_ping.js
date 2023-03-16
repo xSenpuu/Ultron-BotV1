@@ -20,14 +20,16 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.UseApplicationCommands),
     async execute(interaction, client) {
 
-        if (!interaction.member.roles.cache.has(process.env.SEEDER_PING_R)) {
+        const { roles } = interaction.member
+
+        if (roles.cache.has(process.env.PROSPECTS_R)) {
             await interaction.reply({
                 content: "You are not allowed to use this command, sorry...",
                 ephemeral: true
             });
 
             return
-        }
+            }
 
         const channelID = process.env.SEEDER_C //#seeder
         const roleID = process.env.SEEDER_R //@seeder

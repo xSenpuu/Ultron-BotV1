@@ -7,14 +7,16 @@ const {
     PermissionFlagsBits,
   } = require("discord.js");
   
-  module.exports = {
+    module.exports = {
     data: new SlashCommandBuilder()
       .setName("feedback")
       .setDescription("Please fill out the feedback form"),
-      
+
     async execute(interaction, client) {
 
-        if (!interaction.member.roles.cache.has(process.env.PROSPECTS_R)) {
+        const { roles } = interaction.member
+
+        if (roles.cache.has(process.env.PROSPECTS_R)) {
             await interaction.reply({
                 content: "You are not allowed to use this command, sorry...",
                 ephemeral: true
