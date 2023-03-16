@@ -1,6 +1,10 @@
 const { Guilds, EmbedBuilder } = require("discord.js");
 const PROSPECT = process.env.PROSPECTS_R
 const GARRI = process.env.GARRI_R
+const TRAINING = process.env.TRAINING_C
+const MATCH = process.env.MATCH_C
+const HLL101 = process.env.HLL101_C
+
 module.exports = {
     data: {
         name: `join-us`
@@ -38,11 +42,14 @@ module.exports = {
                 if (member.roles.cache.has(PROSPECT)) { // if they already have the role
                     member.roles.remove(PROSPECT); // remove it
                     channel.send({embeds: [leftembed], ephemeral: false})
-                    await interaction.reply ({content: 'You removed the Prospect role!', ephemeral: true})
+                    await interaction.reply ({content: 'You have been removed the Prospect role!', ephemeral: true})
                 } else { // if they don't have the role
                     member.roles.add(PROSPECT); // add it
                     channel.send({embeds: [prospectembed], ephemeral: false})
-                    await interaction.reply ({content: 'You obtained the Prospect role!', ephemeral: true})
+                    await interaction.reply ({content: `You have acquired the <@&${PROSPECT}> role!
+Welcome to the degenerate house, looking forward to watching you click some heads! 
+All we ask is you hit buttons on <#${TRAINING}> & <#${MATCH}>!
+We would also appreciate if you could help out with seeding if and when you can.`, ephemeral: true})
                 }
             }
         }
