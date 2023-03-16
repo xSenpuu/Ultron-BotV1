@@ -37,7 +37,7 @@ const {
           
       const role2 = new TextInputBuilder()
           .setCustomId('role2')
-          .setLabel(`What's your preffered secondary role?`)
+          .setLabel(`What's your prefered secondary role?`)
           .setRequired(true)
           .setStyle(TextInputStyle.Short)
           .setPlaceholder("Preferred Secondary Role");

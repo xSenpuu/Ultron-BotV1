@@ -8,7 +8,7 @@ const path = require('path');
 const process = require('process');
 const {google} = require('googleapis');
 //authentication
-const key = require(path.join(process.cwd(), 'credentials.json'));
+const key = require(path.join(process.cwd(),'credentials.json'));
 const jwtClient = new google.auth.JWT(
   key.client_email,
   null,
@@ -60,16 +60,16 @@ var recon = ["<:Spotter:1031569808128487424>" + sheetData[11][3],"<:hll_sniper:1
 var tank1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][6],"<:hll_tank:1025923672604684318>" + sheetData[6][6],"<:hll_tank:1025923672604684318>" + sheetData[7][6]];
 var tank2 = ["<:hll_sl:1025923709707497602>" + sheetData[10][6],"<:hll_tank:1025923672604684318>" + sheetData[11][6],"<:hll_tank:1025923672604684318>" + sheetData[12][6]];
 var tank3 = ["<:hll_sl:1025923709707497602>" + sheetData[15][6],"<:hll_tank:1025923672604684318>" + sheetData[16][6]];
-var reconTranspo = ["<:hll_sl:1025923709707497602>" + sheetData[19][6],"<:hll_sniper:1025923689700671571>" + sheetData[20][6]];
+var tank4 = ["<:hll_sl:1025923709707497602>" + sheetData[20][6],"<:hll_sniper:1025923689700671571>" + sheetData[21][6]];
 var irn1 = ["<:hll_sl:1025923709707497602>" + sheetData[5][9],"<:inf:1078036242010210374>" + sheetData[6][9],"<:inf:1078036242010210374>" +sheetData[7][9],"<:hll_sl:1025923709707497602>" +sheetData[8][9],"<:inf:1078036242010210374>" +sheetData[9][9],"<:inf:1078036242010210374>" +sheetData[10][9], "<:hll_sl:1025923709707497602>" +sheetData[11][9],"<:inf:1078036242010210374>" +sheetData[12][9], "<:inf:1078036242010210374>" +sheetData[13][9]];
-//var thr2 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:hll_sl:1025923709707497602>" + sheetData[6][12],"<:hll_infantry:1025923730582548532>" +sheetData[7][12],"<:hll_infantry:1025923730582548532>" +sheetData[8][12],"<:hll_infantry:1025923730582548532>" +sheetData[9][12],"<:hll_infantry:1025923730582548532>" +sheetData[10][12]];
+var thr2 = ["<:inf:1078036242010210374>" +sheetData[6][15], "<:inf:1078036242010210374>" +sheetData[7][15]];
 var cpt3 = ["<:hll_sl:1025923709707497602>" + sheetData[5][12],"<:inf:1078036242010210374>" + sheetData[6][12],"<:inf:1078036242010210374>" +sheetData[7][12],"<:hll_sl:1025923709707497602>" +sheetData[8][12],"<:inf:1078036242010210374>" +sheetData[9][12],"<:inf:1078036242010210374>" +sheetData[10][12], "<:hll_sl:1025923709707497602>" +sheetData[11][12], "<:inf:1078036242010210374>" +sheetData[12][12],"<:inf:1078036242010210374>" +sheetData[13][12],];
-var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_sl:1025923709707497602>" +sheetData[17][12],"<:hll_sl:1025923709707497602>" +sheetData[18][12],"<:hll_sl:1025923709707497602>" + sheetData[19][12]];
-var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:inf:1078036242010210374>" +sheetData[17][9],"<:inf:1078036242010210374>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:inf:1078036242010210374>" +sheetData[20][9]];
-var aux6 = ["<:inf:1078036242010210374>" +sheetData[7][15], "<:inf:1078036242010210374>" +sheetData[8][15]]; //thor rkts
-var simp7 = ["<:simp:1031570292125999115>" + sheetData[12][15], "<:simp:1031570292125999115>" + sheetData[13][15]];
+var ant4 = ["<:hll_sl:1025923709707497602>" + sheetData[16][12],"<:hll_sl:1025923709707497602>" +sheetData[17][12],"<:hll_sl:1025923709707497602>" +sheetData[18][12]];
+var hlk5 = ["<:hll_sl:1025923709707497602>" + sheetData[16][9],"<:inf:1078036242010210374>" +sheetData[17][9],"<:inf:1078036242010210374>" +sheetData[18][9], "<:hll_sl:1025923709707497602>" + sheetData[19][9], "<:inf:1078036242010210374>" +sheetData[20][9],"<:hll_sl:1025923709707497602>" + sheetData[21][9],];
+//var aux6 = ["<:inf:1078036242010210374>" +sheetData[7][15], "<:inf:1078036242010210374>" +sheetData[8][15]]; //thor rkts
+var simp7 = ["<:simp:1031570292125999115>" + sheetData[10][15], "<:simp:1031570292125999115>" + sheetData[11][15]];
 //var prb = ["<:hll_sl:1025923709707497602>" + sheetData[18][12],"<:hll_infantry:1025923730582548532>" +sheetData[19][12]];
-var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714068>" + sheetData[18][15],"<:mg:1031570306323714068>" + sheetData[19][15]];
+var mg = ["<:mg:1031570306323714068>" + sheetData[14][15],"<:mg:1031570306323714068>" + sheetData[15][15],"<:mg:1031570306323714068>" + sheetData[16][15]];
 //creates the strings from the cells above.
     var titlestring = "";
     var cmdrstring = "";
@@ -79,13 +79,13 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
     var tank1string = "";
     var tank2string = "";
     var tank3string = "";
-    var reconTranspostring = "";
+    var tank4string = "";
     var irn1string = "";
-    //var thr2string = "";
+    var thr2string = "";
     var cpt3string = "";
     var ant4string = "";
     var hlk5string = "";
-    var aux6string = "";
+    //var aux6string = "";
     var simp7string = "";
     //var prbstring = "";
     var mgstring = "";
@@ -98,13 +98,13 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
     tank1string = embedString(tank1string, tank1);
     tank2string = embedString(tank2string, tank2);
     tank3string = embedString(tank3string, tank3);
-    reconTranspostring = embedString(reconTranspostring, reconTranspo);
+    tank4string = embedString(tank4string, tank4);
     irn1string = embedString(irn1string, irn1);
-    //thr2string = embedString(thr2string, thr2);
+    thr2string = embedString(thr2string, thr2);
     cpt3string = embedString(cpt3string, cpt3);
     ant4string = embedString(ant4string, ant4);
     hlk5string = embedString(hlk5string, hlk5);
-    aux6string = embedString(aux6string, aux6);
+    //aux6string = embedString(aux6string, aux6);
     simp7string = embedString(simp7string, simp7);
     //prbstring = embedString(prbstring, prb);
     mgstring = embedString(mgstring, mg);
@@ -125,9 +125,9 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
                       "value": cmdrstring,
                       "inline": true
                     },
-                                    {
-                      "name": "```ROCKET [RKT] 🔵```",
-                      "value": simp7string,
+                    {
+                      "name": "```RECON TRANSPORT```",
+                      "value": tank4string,
                       "inline": true
                     },
                     {
@@ -151,7 +151,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
                       "inline": true
                     },
                         {
-                      "name": "<:inf1:1075236124177465367>```| IRONMAN [IRN] 🟡```",
+                      "name": "```1 | IRONMAN [IRN] 🟡```",
                       "value": irn1string,
                       "inline": true
                     },
@@ -161,7 +161,7 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
                       "inline": true
                     },
                     {
-                      "name": "<:inf2:1075238335993356328>```| CPT AMERICA [CPT] 🔴```",
+                      "name": "```2 | CPT AMERICA [CPT] 🔴```",
                       "value": cpt3string,
                       "inline": true
                     },
@@ -176,22 +176,22 @@ var mg = ["<:mg:1031570306323714068>" + sheetData[17][15],"<:mg:1031570306323714
                       "inline": true
                     },
                     {
-                      "name": "```THOR [THR] 🔵```",
-                      "value": aux6string,
-                      "inline": true
-                    },
-                    {
                       "name": "```RECON 🟪```",
                       "value": reconstring,
                       "inline": true
                     },
-                            {
-                      "name": "```RECON TRANSPORT```",
-                      "value": reconTranspostring,
+                    {
+                      "name": "```AT GUNS | THOR [THR] 🔵```",
+                      "value": thr2string,
                       "inline": true
                     },
                     {
-                      "name": "```MG | BUCKY [BUC] 🔵```",
+                      "name": "```SIMP | ROCKET [RKT] 🔵```",
+                      "value": simp7string,
+                      "inline": true
+                    },
+                    {
+                      "name": "```MG'S | BUCKY [BUC] 🔵```",
                       "value": mgstring,
                       "inline": true
             },)
