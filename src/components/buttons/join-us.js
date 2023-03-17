@@ -3,7 +3,6 @@ const PROSPECT = process.env.PROSPECTS_R
 const GARRI = process.env.GARRI_R
 const TRAINING = process.env.TRAINING_C
 const MATCH = process.env.MATCH_C
-const HLL101 = process.env.HLL101_C
 
 module.exports = {
     data: {
