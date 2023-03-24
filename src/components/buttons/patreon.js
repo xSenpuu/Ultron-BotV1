@@ -1,4 +1,5 @@
 const { Guilds, EmbedBuilder } = require("discord.js");
+const PAPA_R = process.env.PAPA_R
 
 module.exports = {
     data: {
@@ -20,7 +21,7 @@ module.exports = {
                 **Standard VIP | $5 per month**
                 VIP Access to GOF 1 // US EAST
                 
-                Once purchased, message a <@801843979594629131> 👴 to get your VIP`)
+                Once purchased, message a <@&${PAPA_R}> 👴 to get your VIP`)
                 .setImage('https://i.imgur.com/W4mlM4k.jpg')
                 .setColor(0x800080)
                 .setFooter({
