@@ -27,12 +27,6 @@ module.exports = {
       .setStyle(ButtonStyle.Primary)
       .setEmoji('🌱');
 
-      const patreon = new ButtonBuilder()
-      .setCustomId("patreon")
-      .setLabel("Patreon")
-      .setStyle(ButtonStyle.Danger)
-      .setEmoji('💰');
-
     const joinusEmbed = new EmbedBuilder()
       .setTitle("♿ Join GOF Hell Let Loose Competitive Team ♿")
       .setDescription(
@@ -57,7 +51,7 @@ module.exports = {
         text: "Powered by Stark Industries",
       });
 
-    await channel.send ({ embeds: [joinusEmbed], ephemeral: false, components: [new ActionRowBuilder().addComponents(join, seed, patreon)]});
+    await channel.send ({ embeds: [joinusEmbed], ephemeral: false, components: [new ActionRowBuilder().addComponents(join, seed)]});
     await interaction.reply ({content: '*Embed has been sent*', ephemeral: true});
   }
 }
