@@ -1,6 +1,9 @@
 const { Guilds, EmbedBuilder } = require("discord.js");
-const PROSPECT = '960908800787882004'
-const GARRI = '758397862399836260'
+const PROSPECT = process.env.PROSPECTS_R
+const GARRI = process.env.GARRI_R
+const TRAINING = process.env.TRAINING_C
+const MATCH = process.env.MATCH_C
+
 module.exports = {
     data: {
         name: `join-us`
@@ -10,12 +13,12 @@ module.exports = {
             const buttonID = interaction.customId;
             if (buttonID === 'join-us') { // get button by customId set below
                 const member = interaction.member; // get member from the interaction - person who clicked the button
-                const channelID = '1019418308350595122' //prospects
+                const channelID = process.env.PROSPECTS_C //prospects
                 const channel = interaction.guild.channels.cache.get(channelID)
                 //console.log(member);
                 const leftembed = new EmbedBuilder()
                 .setTitle(`Prospect Notification`)
-                .setDescription(`<@${interaction.user.id}> just removed the <@&${PROSPECT}> role!`)
+                .setDescription(`${member.displayName} just removed the <@&${PROSPECT}> role!`)
                 .setColor(0x800080)
                 .setFooter({
                 iconURL:
@@ -24,7 +27,7 @@ module.exports = {
               })
               const prospectembed = new EmbedBuilder()
               .setTitle(`Prospect Notification`)
-              .setDescription(`<@${interaction.user.id}> just picked up the <@&${PROSPECT}> role!`)
+              .setDescription(`${member.displayName} just picked up the <@&${PROSPECT}> role!`)
               .setColor(0x800080)
               .setFooter({
               iconURL:
@@ -38,11 +41,14 @@ module.exports = {
                 if (member.roles.cache.has(PROSPECT)) { // if they already have the role
                     member.roles.remove(PROSPECT); // remove it
                     channel.send({embeds: [leftembed], ephemeral: false})
-                    await interaction.reply ({content: 'You removed the Prospect role!', ephemeral: true})
+                    await interaction.reply ({content: 'You have been removed the Prospect role!', ephemeral: true})
                 } else { // if they don't have the role
                     member.roles.add(PROSPECT); // add it
                     channel.send({embeds: [prospectembed], ephemeral: false})
-                    await interaction.reply ({content: 'You obtained the Prospect role!', ephemeral: true})
+                    await interaction.reply ({content: `You have acquired the <@&${PROSPECT}> role!
+Welcome to the degenerate house, looking forward to watching you click some heads! 
+All we ask is you hit buttons on <#${TRAINING}> & <#${MATCH}>!
+We would also appreciate if you could help out with seeding if and when you can.`, ephemeral: true})
                 }
             }
         }
