@@ -8,6 +8,8 @@ const {
     OpenAIApi
 } = require("openai");
 
+const MemberHelper = require("../../helpers/members")
+
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -20,16 +22,17 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.UseApplicationCommands),
     async execute(interaction, client) {
 
-        const { roles } = interaction.member
-
-        if (roles.cache.has(process.env.PROSPECTS_R)) {
+        if (!(await MemberHelper.memberHasRole(client,
+            interaction.guild.id,
+            interaction.user.id,
+            process.env.SEEDER_PING_R))) {
             await interaction.reply({
                 content: "You are not allowed to use this command, sorry...",
                 ephemeral: true
             });
 
             return
-            }
+        }
 
         const channelID = process.env.SEEDER_C //#seeder
         const roleID = process.env.SEEDER_R //@seeder
