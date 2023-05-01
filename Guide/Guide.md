@@ -55,6 +55,7 @@ Usage: `/ultron_privileges revoke {privilege|<privilege>}* {role|<role>}*`
 ### /ultron_privileges manage
 ---
 Manage a specific privilege
+
 Usage: `/ultron_privileges manage {create|<privilege>} {edit|<privilege>} {delete|<privilege>} {view|<privilege>}`
 - Options: Requires exactly 1 of 4
     - create -> create a new privilege
@@ -108,7 +109,6 @@ This set of commands is for creating and modifying easily accessible documents f
 - [/ultron_comp_info remove_restriction](#ultron_comp_info-remove_restriction)
 - [/ultron_comp_info view_restrictions](#ultron_comp_info-view_restrictions)
 - [/ultron_comp_info manage](#ultron_comp_info-manage)
-
 
 ### /ultron_view_comp_info
 ---

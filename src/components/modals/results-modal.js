@@ -8,6 +8,7 @@ module.exports = {
     const channelID = '970103262135058503' //Match-History
     const channel = interaction.guild.channels.cache.get(channelID)
     const input = interaction.fields.getTextInputValue('results') + "\n" + "ㅤ".repeat(28)
+
     const matchEmbed = new EmbedBuilder()
       .setTitle("Match Result")
       .setDescription(input)
