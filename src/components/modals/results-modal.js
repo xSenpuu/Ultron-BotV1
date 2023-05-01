@@ -7,7 +7,6 @@ module.exports = {
   async execute(interaction, client) {
     const channelID = process.env.MATCH_HISTORY
     const channel = interaction.guild.channels.cache.get(channelID)
-    console.log(interaction.fields)
     const input = interaction.fields.getTextInputValue('input') + "\n" + "ㅤ".repeat(28)
     const matchEmbed = new EmbedBuilder()
       .setTitle("Match Result")
