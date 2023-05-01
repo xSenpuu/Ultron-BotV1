@@ -7,9 +7,10 @@ module.exports = {
   async execute(interaction, client) {
     const channelID = process.env.MATCH_HISTORY
     const channel = interaction.guild.channels.cache.get(channelID)
+    const team = interaction.fields.getTextInputValue('team')
     const input = interaction.fields.getTextInputValue('input') + "\n" + "ㅤ".repeat(28)
     const matchEmbed = new EmbedBuilder()
-      .setTitle("Match Result")
+      .setTitle(`♿ Garri's OnlyFans vs ` + team)
       .setDescription(input)
       .setColor(0x800080)
       .setThumbnail(interaction.guild.iconURL())
