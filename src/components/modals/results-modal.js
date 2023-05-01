@@ -4,8 +4,8 @@ module.exports = {
   data: {
     name: `results-modal`
   },
-  async execute(interaction, client, extra) {
-    const channelID = '970103262135058503' //Match-History
+  async execute(interaction, client) {
+    const channelID = process.env.MATCH_HISTORY
     const channel = interaction.guild.channels.cache.get(channelID)
     const input = interaction.fields.getTextInputValue('results') + "\n" + "ㅤ".repeat(28)
     const matchEmbed = new EmbedBuilder()

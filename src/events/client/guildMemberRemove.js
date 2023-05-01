@@ -10,7 +10,7 @@ module.exports = {
 
     const garriembed = new EmbedBuilder()
       .setTitle(`Just to let you know..`)
-      .setDescription(`**${interaction.displayName}** has left the Server, he was one of ours...`)
+      .setDescription(`**${interaction.displayName}** has left the Server, they were one of ours...`)
       .setColor(0x800080)
       .setFooter({
         iconURL:

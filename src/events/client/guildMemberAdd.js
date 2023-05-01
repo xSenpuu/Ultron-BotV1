@@ -13,7 +13,7 @@ module.exports = {
     } else if ($rand == 1) {
       $text = `<@${interaction.user.id}>, You're unbearably naive..`
     } else if ($rand == 2) {
-      $text = `Tony Stark.. oh it's just you <@${interaction.user.id}>`
+      $text = `Tony Stark..? oh it's just you <@${interaction.user.id}>`
     }
 
     const addembed = new EmbedBuilder()
