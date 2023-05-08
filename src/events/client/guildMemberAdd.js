@@ -20,7 +20,7 @@ module.exports = {
       .setTitle(`Men of peace create engines of war...`)
       .setDescription(`Welcome to **${interaction.guild.name}**, check out <#801855926511861832>. We were voted friendliest team on reddit. Here you'll find garrisons, bad puns, and obsessed losers who play this c-tier game just like you. Hop in voice and play with us.. I'd say we don't bite but we are a bunch of cunts so uh, enjoy your stay. Oh and if you wanna play comp HLL head to <#918575240651624508> and hit that :eggplant: to become a prospect.`)
       .setColor(0x800080)
-      .setImage(`https://media.discordapp.net/attachments/936543359974121542/1008407381409026069/GOF---3.gif`)
+      .setImage(`https://cdn.discordapp.com/attachments/936543359974121542/1102976265092337796/GOF_NEw_3_2.gif`)
       //.setThumbnail(interaction.member.displayAvatarURL())
       //.setTimestamp(Date.now())
       //.setAuthor({
