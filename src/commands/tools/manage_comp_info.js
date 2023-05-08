@@ -363,10 +363,6 @@ module.exports = {
         switch (subcommand) {
 
             case "add_restriction":
-                if (!(interaction.member.permissions.has(PermissionsBitField.Flags.Administrator))) {
-                    await interaction.reply({ content: "You do not have permission to use this command.", ephemeral: ephemeral })
-                    return
-                }
                 options = interaction.options.data[0].options
                 priv = options.filter(option => option.name == 'privilege')
                 privId = priv[0].value
@@ -377,10 +373,6 @@ module.exports = {
                 break
 
             case "remove_restriction":
-                if (!(interaction.member.permissions.has(PermissionsBitField.Flags.Administrator))) {
-                    await interaction.reply({ content: "You do not have permission to use this command.", ephemeral: ephemeral })
-                    return
-                }
                 options = interaction.options.data[0].options
                 priv = options.filter(option => option.name == 'privilege')
                 privId = priv[0].value
@@ -391,18 +383,12 @@ module.exports = {
                 break
 
             case "view_restrictions":
-                if (!(interaction.member.permissions.has(PermissionsBitField.Flags.Administrator))) {
-                    await interaction.reply({ content: "You do not have permission to use this command.", ephemeral: ephemeral })
-                    return
-                }
 
                 await viewRestriction(interaction, client, options[0].value)
                 break
 
             case "manage":
-                if (!(interaction.member.permissions.has(PermissionsBitField.Flags.Administrator))) {
-                    await interaction.reply({ content: "You do not have permission to use this command.", ephemeral: ephemeral })
-                }
+
                 if (options.length > 1 || options.length <= 0) {
                     await interaction.reply({ content: "Please select one valid option!", ephemeral: ephemeral })
                     return
