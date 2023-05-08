@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const GARRI = '758397862399836260'
-const PROSPECT_ID = "960908800787882004"
+const GARRI = process.env.GARRI_R
+const PROSPECT_ID = process.env.PROSPECTS_R
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -9,7 +9,7 @@ module.exports = {
 	async execute(interaction, client) {
 
 		if (!interaction.member.roles.cache.has(GARRI)) {
-			interaction.reply("no")
+			interaction.reply("You do not have permission to run this command...")
 			return
 		}
 
